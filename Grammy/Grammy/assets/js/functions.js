@@ -67,9 +67,9 @@ jQuery(document).ready(function($) {
         // omitWeeks: true
 
          targetOffset: {
-            'day':      0,
+            'day':      14,
             'month':    0,
-            'year':     1,
+            'year':     0,
             'hour':     0,
             'min':      0,
             'sec':      3

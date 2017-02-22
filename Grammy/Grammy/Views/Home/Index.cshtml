@@ -13,12 +13,18 @@
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <!-- Jquery-UI CSS  -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- Toastr  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
     <!-- Bootstrap  -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <!-- icon fonts font Awesome -->
     <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
     <!-- Custom Styles -->
     <link href="/assets/css/style.css" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link href="~/Content/css.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="assets/js/html5shiv.js"></script>
     <![endif]-->
@@ -52,28 +58,28 @@
         <nav class="collapse navbar-collapse">
             <!-- Main navigation -->
             <ul id="headernavigation" class="nav navbar-nav">
-                <li class="active"><a href="#page-top">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#subscribe">Subscribe</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="active"><a href="#page-top">Timeout</a></li>
+                <li><a href="#about">Rate</a></li>
+                <li><a href="#subscribe">Ranking</a></li>
+                <li><a href="#contact">Sponsors</a></li>
             </ul> <!-- /.nav .navbar-nav -->
         </nav> <!-- /.navbar-collapse  -->
     </div><!-- /#main-menu -->
     <!-- Main Menu End -->
     <!-- Page Top Section -->
     <section id="page-top" class="section-style" data-background-image="../../images/background/page-top.jpg">
+       
         <div class="pattern height-resize">
             <div class="container">
+                <button type="button" id="login" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-user"></span> Login
+                </button>
                 <h1 class="site-title">
-                    Kite
+                    Grammy's
                 </h1><!-- /.site-title -->
-                <h3 class="section-name">
-                    <span>
-                        We Are
-                    </span>
-                </h3><!-- /.section-name -->
+                
                 <h2 class="section-title">
-                    Coming Soon
+                    Timeout
                 </h2><!-- /.Section-title  -->
                 <div id="time_countdown" class="time-count-container">
                     <div class="col-sm-3">
@@ -123,7 +129,7 @@
                     </div>
                 </div><!-- /.time-count-container -->
                 <p class="time-until">
-                    <span>Time Until Launce</span>
+                    <span>Time until voting ends</span>
                 </p><!-- /.time-until -->
 
                 <div class="next-section">
@@ -139,15 +145,13 @@
             <div class="container">
                 <h3 class="section-name">
                     <span>
-                        About Us
+                        Rate
                     </span>
                 </h3><!-- /.section-name -->
                 <h2 class="section-title">
-                    We Are dedicated
+                    We need your vote
                 </h2><!-- /.Section-title  -->
-                <p class="section-description">
-                    Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-                </p><!-- /.section-description -->
+                
                 <div class="team-container">
                     <div class="row">
                         <div class="col-sm-4">
@@ -283,15 +287,13 @@
             <div class="container">
                 <h3 class="section-name">
                     <span>
-                        Subscribe
+                       Ranking
                     </span>
                 </h3><!-- /.section-name -->
                 <h2 class="section-title">
-                    Our Newsletter
+                    Look the most voted albums
                 </h2><!-- /.Section-title  -->
-                <p class="section-description">
-                    Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-                </p><!-- /.section-description -->
+                
                 <form class="news-letter" method="post">
                     <p class="alert-success"></p>
                     <p class="alert-warning"></p>
@@ -337,15 +339,13 @@
             <div class="container">
                 <h3 class="section-name">
                     <span>
-                        Contact
+                        Sponsor
                     </span>
                 </h3><!-- /.section-name -->
                 <h2 class="section-title">
                     Get in Touch
                 </h2><!-- /.Section-title  -->
-                <p class="section-description">
-                    Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-                </p><!-- /.section-description -->
+                
                 <form id="contact-form" action="email.php" method="post" class="clearfix">
                     <div class="contact-box-hide">
                         <div class="col-sm-6">
@@ -383,6 +383,81 @@
     </section><!-- /#contact -->
     <!-- Contact Section End -->
     <!-- Footer Section -->
+
+    <div id="dialog-form" class="container" style="display:none">
+        <div class="row" id="rowtuputamadre">
+            <div class="col-md-6 col-md-offset-3">
+                <div id="bloque" class="panel panel-login">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a href="#" class="active" id="login-form-link">Login</a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="#" id="register-form-link">Register</a>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form id="login-form" action="return:false;" method="post" role="form">
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                        <label for="remember"> Remember Me</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input type="submit"  name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <form id="register-form" action="return:false;" method="post" role="form" style="display: none;">
+                                    <div class="form-group">
+                                        <input type="text" name="nombre" id="nombre1" tabindex="1" class="form-control" placeholder="Name" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username1" tabindex="1" class="form-control" placeholder="Username" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="fNacimiento" id="fNacimiento1" tabindex="1" class="form-control" placeholder="Fecha de nacimiento" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="email" id="email1" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password1" tabindex="2" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="confirm-password" id="confirm-password1" tabindex="2" class="form-control" placeholder="Confirm Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+
+                                                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer id="footer-section">
         <p class="copyright">
             &copy; <a href="http://jeweltheme.com/html/kite/">Kite</a> 2014-2015, All Rights Reserved. Designed by & Developed by <a href="http://jeweltheme.com">Jewel Theme</a>
@@ -402,6 +477,17 @@
     <script type="text/javascript" src="/assets/js/functions.js"></script>
     <!-- Custom JavaScript Functions -->
     <script type="text/javascript" src="/assets/js/jquery.ajaxchimp.min.js"></script>
+    <!-- BootStrap Library -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery-UI Library -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Toastr Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- Custom JavaScript Functions -->
+    <script type="text/javascript" src="~/Scripts/js.js"></script>
+    <!-- Custom JavaScript Functions -->
+    <script type="text/javascript" src="~/Scripts/loginAccess.js"></script>
+
 </body>
 </html>
 
