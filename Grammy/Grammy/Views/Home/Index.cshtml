@@ -74,7 +74,7 @@
                 <button type="button" id="login" class="btn btn-default btn-sm">
                     <span class="glyphicon glyphicon-user"></span> Login
                 </button>
-                <h1 id="container" class="site-title">
+                <h1 class="site-title">
                     Grammy's
                 </h1><!-- /.site-title -->
                 
@@ -294,18 +294,9 @@
                     Look the most voted albums
                 </h2><!-- /.Section-title  -->
                 
-                <form class="news-letter" method="post">
-                    <p class="alert-success"></p>
-                    <p class="alert-warning"></p>
-                    <div class="subscribe-hide">
-                        <input class="form-control" type="email" id="subscribe-email" name="subscribe-email" placeholder="Email Address" required>
-                        <button type="submit" id="subscribe-submit" class="btn"><i class="fa fa-envelope"></i></button>
-                        <span id="subscribe-loading" class="btn"> <i class="fa fa-refresh fa-spin"></i> </span>
-                        <div class="subscribe-error"></div>
-                    </div><!-- /.subscribe-hide -->
-                    <div class="subscribe-message"></div>
-                </form><!-- /.news-letter -->
-                <div class="social-btn-container">
+                <div id="ranking"></div>
+        
+                @*<div class="social-btn-container">
                     <span class="social-btn-box">
                         <a href="#" class="facebook-btn">
                             <i class="fa fa-facebook"></i>
@@ -325,7 +316,7 @@
                         <a href="#" class="youtube-btn"><i class="fa fa-youtube"></i></a>
                     </span><!-- /.social-btn-box -->
 
-                </div><!-- /.social-btn-container -->
+                </div><!-- /.social-btn-container -->*@
                 <div class="next-section">
                     <a class="go-to-contact"><span></span></a>
                 </div><!-- /.next-section -->
@@ -462,9 +453,6 @@
         <p class="copyright">
             &copy; <a href="http://jeweltheme.com/html/kite/">Kite</a> 2014-2015, All Rights Reserved. Designed by & Developed by <a href="http://jeweltheme.com">Jewel Theme</a>
         </p>
-        <form method="post" action="@Url.Action("Login", "Home")">
-            <button class="login" type="submit">Login</button>
-        </form>
     </footer>
     <!-- Footer Section End -->
     <!-- jQuery Library -->
@@ -487,7 +475,12 @@
     <script type="text/javascript" src="~/Scripts/js.js"></script>
     <!-- Custom JavaScript Functions -->
     <script type="text/javascript" src="~/Scripts/loginAccess.js"></script>
+    <!--React's Library-->
     <script src="~/Scripts/react/react.min.js"></script>
+    <!--Charts' Library-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!--Custom JavaScript Functions Charts-->
+    <script type="text/javascript" src="~/Scripts/jsRanking/charts.js"></script>
 
 </body>
 </html>
