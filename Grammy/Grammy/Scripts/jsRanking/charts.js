@@ -1,5 +1,5 @@
-﻿/*google.charts.load("current", { packages: ["corechart"] });
-google.charts.setOnLoadCallback(drawChart);*/
+﻿google.charts.load("current", { packages: ["corechart"] });
+
 
 var arrayPunt = [["Element", "Density", { role: "style" }]];
 
@@ -11,16 +11,17 @@ function loadCharts() {
         contentType: "application/json",
         success: function (Puntuaciones) {
             $.each(Puntuaciones, function (index) {
-                if (index < 4) {
-                    aux = [Puntuaciones[index].iddisco, + Puntuaciones[index].Puntuacion1, 'green'] ;
+                if (index < 5) {
+                    aux = [(Puntuaciones[index].iddisco).toString(), Puntuaciones[index].Puntuacion1, "green"];
                     arrayPunt.push(aux);
-                }/*else if(index == 4){
+                }/*else if(index == 5){
                     aux = [Puntuaciones[index].idDisco, +Puntuaciones[index].Puntuacion1, 'green'];
                     arrayPunt.push(aux);
 
                 }*/
             });
             console.log(arrayPunt);
+            google.charts.setOnLoadCallback(drawChart);
         }
     });
 }
@@ -28,15 +29,15 @@ function loadCharts() {
 document.body.onload = function () {
     loadCharts();
 }
-/*
+
 function drawChart() {
     [
       ["Element", "Density", { role: "style" }],
-      ["Copper", 8.94, "#b87333"],
-      ["Silver", 10.49, "silver"],
-      ["Gold", 19.30, "gold"],
-      ["Platinum", 21.45, "color: #e5e4e2"],
-      ["Emi", 23.3, "pink"]
+      [arrayPunt[1][0], arrayPunt[1][1], "#b87333"],
+      [arrayPunt[2][0], arrayPunt[2][1], "silver"],
+      [arrayPunt[3][0], arrayPunt[3][1], "gold"],
+      [arrayPunt[4][0], arrayPunt[4][1], "color: #e5e4e2"],
+      [arrayPunt[5][0], arrayPunt[5][1], "pink"]
     ]
     var data = google.visualization.arrayToDataTable();
 
@@ -59,4 +60,4 @@ function drawChart() {
     };
     var chart = new google.visualization.BarChart(document.getElementById("ranking"));
     chart.draw(view, options);
-}*/
+}

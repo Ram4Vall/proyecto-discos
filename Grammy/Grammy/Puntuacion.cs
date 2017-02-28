@@ -9,9 +9,13 @@
 
 namespace Grammy
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+    using System.Runtime.Serialization;
+
+    [DataContract(IsReference = true)]
+    [JsonObject(IsReference = false)]
     public partial class Puntuacion
     {
         public int Id { get; set; }
@@ -19,8 +23,10 @@ namespace Grammy
         public Nullable<int> iddisco { get; set; }
         public Nullable<int> Puntuacion1 { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
-    
+
+        [JsonIgnore]
         public virtual Cliente Cliente { get; set; }
+        [JsonIgnore]
         public virtual Disco Disco { get; set; }
     }
 }
