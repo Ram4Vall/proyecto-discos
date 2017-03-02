@@ -76,9 +76,11 @@ Formulario.prototype.buscarUsuario = function () {
                             //Si el usuario quiere ser recordado en la web se crea un localStorage, sino, un sessionStorae
                             if ($('#remember:checked').length > 0) {
                                 contAux++;
+                                $('#userLogin').text("Bienvenido " + $('#username').val());
                                 localStorage.setItem('ClienteLogeado', obClient);
                             }
                             else {
+                                $('#userLogin').text("Bienvenido " + $('#username').val());
                                 contAux++;
                                 sessionStorage.setItem('ClienteLogeado', obClient);
                             }

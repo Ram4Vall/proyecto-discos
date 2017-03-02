@@ -30,6 +30,7 @@
     <![endif]-->
 </head>
 <body>
+    
 
     <!-- Preloader -->
     <div id="preloader">
@@ -48,9 +49,10 @@
     <!-- Preloader End-->
     <!-- Main Menu -->
     <div id="main-menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
         <div class="navbar-header">
             <!-- responsive navigation -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" id="navCollap" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <i class="fa fa-bars"></i>
             </button> <!-- /.navbar-toggle -->
@@ -70,10 +72,21 @@
     <section id="page-top" class="section-style" data-background-image="../../images/background/page-top.jpg">
        
         <div class="pattern height-resize">
+            <nav class="navbar navbar-light bg-faded" id="barraNav">
+                <a class="navbar-brand">
+                    <img id="imageLogo" src="~/Content/logo.png" width="30" height="30" alt="">
+                    
+                    
+                    <button type="button" id="login" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-user"></span> Login
+                    </button><div id="userLogin"></div>
+                </a>
+            </nav>
             <div class="container">
-                <button type="button" id="login" class="btn btn-default btn-sm">
-                    <span class="glyphicon glyphicon-user"></span> Login
-                </button>
+
+                
+
+
                 <h1 class="site-title">
                     Grammy's
                 </h1><!-- /.site-title -->
@@ -337,35 +350,26 @@
                     Get in Touch
                 </h2><!-- /.Section-title  -->
                 
-                <form id="contact-form" action="email.php" method="post" class="clearfix">
+                
                     <div class="contact-box-hide">
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="first_name" name="first_name" required placeholder="First Name">
-                            <span class="first-name-error"></span>
-                        </div>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="last_name" name="last_name" required placeholder="Last Name">
-                            <span class="last-name-error"></span>
-                        </div>
-                        <div class="col-sm-6">
-                            <input type="email" class="form-control" id="contact_email" name="contact_email" required placeholder="Email Address">
-                            <span class="contact-email-error"></span>
-                        </div>
-                        <div class="col-sm-6">
-                            <input type="text" class="form-control" id="subject" name="contact_subject" required placeholder="Subject">
-                            <span class="contact-subject-error"></span>
-                        </div>
-                        <div class="col-sm-10">
-                            <textarea class="form-control" rows="5" id="message" name="message" required placeholder="Message"></textarea>
-                            <span class="contact-message-error"></span>
-                        </div>
-                        <div class="col-sm-2">
-                            <button id="contact-submit" class="btn custom-btn col-xs-12" type="submit" name="submit"><i class="fa fa-rocket"></i></button>
-                            <span id="contact-loading" class="btn custom-btn col-xs-12"> <i class="fa fa-refresh fa-spin"></i> </span>
-                        </div>
+                        <img id="imageLogo" src="~/Content/collage.png"  alt="Mapa de imágenes" usemap="#enlaces" height="100%" width="100%">
+                        <map name="enlaces">
+                            <area alt="Absolut." shape="rect" coords="15,15,385,190"
+                                  href="http://www.absolut.com/us" />
+                            <area alt="People" shape="rect" coords="405,15,995,293"
+                                  href="http://www.people.com" />
+                            <area alt="Soundcloud" shape="rect" coords="19,205,380,380"
+                                  href="http://www.soundcloud.com" />
+                            <area alt="Spotify" shape="rect" coords="410,310,920,430"
+                                  href="http://www.spotify.com" />
+                            <area alt="Shazam" shape="rect" coords="15,400,400,600"
+                                  href="http://www.shazam.com" />
+                            <area alt="Hilton" shape="rect" coords="430,450,860,660"
+                                  href="http://www.hilton.com" />
+                        </map> 
                     </div><!-- /.contact-box-hide -->
-                    <div class="contact-message"></div>
-                </form><!-- /#contact-form -->
+                    
+                
                 <div class="next-section">
                     <a class="go-to-page-top"><span></span></a>
                 </div><!-- /.next-section -->

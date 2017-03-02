@@ -1,4 +1,32 @@
-
+#barraNav{
+    background-color:black;
+    margin-bottom:0px;
+    opacity:0.7;
+    position:relative;
+    top:-90px;
+    margin:5px;
+}
+#userLogin{
+    color: #9B7D4B;
+    position:absolute;
+    right:90px;
+    top:15px;
+    text-align:right;
+ }
+#navCollap{
+    margin-top:70px;
+}
+#login{
+   clear:left;
+    position:absolute;
+    right:10px;
+    top:10px;
+    color: #9B7D4B;
+}
+#imageLogo{
+    position:relative;
+    bottom:5px;
+}
 #register-submit,#login-submit{
 	color:#ffffff;
 	background-color:  #333333;
