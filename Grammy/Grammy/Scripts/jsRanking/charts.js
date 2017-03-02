@@ -2,25 +2,17 @@
 
 
 var arrayPunt = [["Element", "Density", { role: "style" }]];
-
+var puntuacionesOB;
 function loadCharts() {
     $.ajax({
-        url: '../api/Puntuaciones',
+        url: '../api/Top',
         type: "GET",
         dataType: "json",
         contentType: "application/json",
         success: function (Puntuaciones) {
-            $.each(Puntuaciones, function (index) {
-                if (index < 5) {
-                    aux = [(Puntuaciones[index].iddisco).toString(), Puntuaciones[index].Puntuacion1, "green"];
-                    arrayPunt.push(aux);
-                }/*else if(index == 5){
-                    aux = [Puntuaciones[index].idDisco, +Puntuaciones[index].Puntuacion1, 'green'];
-                    arrayPunt.push(aux);
+            puntuacionesOB = JSON.parse(Puntuaciones);
 
-                }*/
-            });
-            console.log(arrayPunt);
+            console.log(puntuacionesOB);
             google.charts.setOnLoadCallback(drawChart);
         }
     });
@@ -31,15 +23,17 @@ document.body.onload = function () {
 }
 
 function drawChart() {
-    [
-      ["Element", "Density", { role: "style" }],
-      [arrayPunt[1][0], arrayPunt[1][1], "#b87333"],
-      [arrayPunt[2][0], arrayPunt[2][1], "silver"],
-      [arrayPunt[3][0], arrayPunt[3][1], "gold"],
-      [arrayPunt[4][0], arrayPunt[4][1], "color: #e5e4e2"],
-      [arrayPunt[5][0], arrayPunt[5][1], "pink"]
-    ]
-    var data = google.visualization.arrayToDataTable();
+
+    var data = google.visualization.arrayToDataTable(
+            [
+              ["Title", "Score", { role: "style" }],
+              [puntuacionesOB[0].Titulo, parseInt(puntuacionesOB[0].Puntuacion), "#b87333"],
+              [puntuacionesOB[1].Titulo, parseInt(puntuacionesOB[1].Puntuacion), "silver"],
+              [puntuacionesOB[2].Titulo, parseInt(puntuacionesOB[2].Puntuacion), "gold"],
+              [puntuacionesOB[3].Titulo, parseInt(puntuacionesOB[3].Puntuacion), "color: #e5e4e2"],
+              [puntuacionesOB[4].Titulo, parseInt(puntuacionesOB[4].Puntuacion), "pink"]
+            ]
+        );
 
     var view = new google.visualization.DataView(data);
     view.setColumns([0, 1,

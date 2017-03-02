@@ -252,6 +252,7 @@
     <Compile Include="Controllers\DiscosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PuntuacionesController.cs" />
+    <Compile Include="Controllers\TopController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Disco.cs">
       <DependentUpon>ModelBDDiscos.tt</DependentUpon>

@@ -640,3 +640,12 @@ add constraint FK_discotipotipo
 foreign key (idtipo)
 references tipo (idtipo);
 go
+
+CREATE VIEW MejoresPuntuaciones AS
+select top 5 d.Titulo, sum(p.Puntuacion) as SumaPuntos
+from Puntuacion as p 
+	inner join Disco as d
+		on p.iddisco = d.IdDisco
+group by d.Titulo
+order by SumaPuntos desc;
+go
