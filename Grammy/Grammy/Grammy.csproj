@@ -403,7 +403,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\index.cshtml" />
-    <Content Include="Scripts\jsx\HelloWord.jsx" />
+    <Content Include="Scripts\jsx\puntuacion.jsx" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

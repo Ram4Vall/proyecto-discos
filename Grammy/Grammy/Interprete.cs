@@ -9,9 +9,13 @@
 
 namespace Grammy
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    
+    using System.Runtime.Serialization;
+
+    [DataContract(IsReference = true)]
+    [JsonObject(IsReference = false)]
     public partial class Interprete
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,7 +26,8 @@ namespace Grammy
     
         public string Interprete1 { get; set; }
         public int IdInterprete { get; set; }
-    
+
+        [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Disco> Discoes { get; set; }
     }
