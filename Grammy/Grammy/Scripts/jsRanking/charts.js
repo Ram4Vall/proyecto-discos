@@ -27,11 +27,11 @@ function drawChart() {
     var data = google.visualization.arrayToDataTable(
             [
               ["Title", "Score", { role: "style" }],
-              [puntuacionesOB[0].Titulo, parseInt(puntuacionesOB[0].Puntuacion), "#b87333"],
-              [puntuacionesOB[1].Titulo, parseInt(puntuacionesOB[1].Puntuacion), "silver"],
-              [puntuacionesOB[2].Titulo, parseInt(puntuacionesOB[2].Puntuacion), "gold"],
-              [puntuacionesOB[3].Titulo, parseInt(puntuacionesOB[3].Puntuacion), "color: #e5e4e2"],
-              [puntuacionesOB[4].Titulo, parseInt(puntuacionesOB[4].Puntuacion), "pink"]
+              [puntuacionesOB[0].Titulo, parseInt(puntuacionesOB[0].Puntuacion), "fill-color:#cc6666; fill-opacity:0.5"],
+              [puntuacionesOB[1].Titulo, parseInt(puntuacionesOB[1].Puntuacion), "fill-color:#cc9966; fill-opacity:0.5"],
+              [puntuacionesOB[2].Titulo, parseInt(puntuacionesOB[2].Puntuacion), "fill-color:#cccc66; fill-opacity:0.5"],
+              [puntuacionesOB[3].Titulo, parseInt(puntuacionesOB[3].Puntuacion), "fill-color:#cccc99; fill-opacity:0.5"],
+              [puntuacionesOB[4].Titulo, parseInt(puntuacionesOB[4].Puntuacion), "fill-color:#cccccc; fill-opacity:0.5"]
             ]
         );
 
@@ -47,10 +47,16 @@ function drawChart() {
 
     var options = {
         title: "Top 5 ratings",
-        width: 600,
+        
+        titleTextStyle: { color: 'white', fontSize: 30, fontfamily: 'Roboto' },
+        textStyle:{color:"white", fontSize:20},
+        width: 800,
         height: 400,
+        is3D: true,
+        fontSize: 15,
+        backgroundColor: "none",
         bar: { groupWidth: "95%" },
-        legend: { position: "none" },
+        legend: { position: "none", fontSize: 20 },
     };
     var chart = new google.visualization.BarChart(document.getElementById("ranking"));
     chart.draw(view, options);

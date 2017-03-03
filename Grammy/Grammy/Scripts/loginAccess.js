@@ -47,6 +47,7 @@ function Formulario() {
     this.dialog;
     this.botonLogin = $("#login-submit");
     this.botonRegistro = $("#register-submit");
+    this.botonLogout = $("#loginOut");
     this.contenedor = $("#dialog-form");
     this.username = $("#username");
     this.password = $("#password");
@@ -59,6 +60,7 @@ function Formulario() {
     //Evento click en el boton del login y del registro.
     this.botonLogin.bind('click', this.buscarUsuario);
     this.botonRegistro.bind('click', this.añadirUsuario);
+    this.botonLogout.bind('click', this.logout);
 }
 Formulario.prototype.buscarUsuario = function () {
 
@@ -76,10 +78,16 @@ Formulario.prototype.buscarUsuario = function () {
                             //Si el usuario quiere ser recordado en la web se crea un localStorage, sino, un sessionStorae
                             if ($('#remember:checked').length > 0) {
                                 contAux++;
+                                $("#userLogin").css("display", "block");
+                                $("#login").css("display", "none");
+                                $("#loginOut").css("display", "block");
                                 $('#userLogin').text("Bienvenido " + $('#username').val());
                                 localStorage.setItem('ClienteLogeado', obClient);
                             }
                             else {
+                                $("#userLogin").css("display", "block");
+                                $("#login").css("display", "none");
+                                $("#loginOut").css("display", "block");
                                 $('#userLogin').text("Bienvenido " + $('#username').val());
                                 contAux++;
                                 sessionStorage.setItem('ClienteLogeado', obClient);
@@ -125,6 +133,14 @@ Formulario.prototype.añadirUsuario = function () {
             }
         });
     }  
+}
+Formulario.prototype.logout = function () {
+    localStorage.removeItem('ClienteLogeado');
+    sessionStorage.removeItem('ClienteLogeado');
+    $("#loginOut").css("display", "none");
+    $("#login").css("display", "block");
+    $("#userLogin").css("display", "none");
+
 }
 //Toastr Error
 function error() {
