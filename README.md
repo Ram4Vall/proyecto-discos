@@ -50,18 +50,37 @@ Dropwizard - The web framework used
 Maven - Dependency Management
 ROME - Used to generate RSS Feeds
 
-## Contributing
+## Usage
 
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+###Development
 
+Want to contribute? Great!
+
+To fix a bug or enhance an existing module, follow these steps:
+
+Fork the repo
+Create a new branch (git checkout -b improve-feature)
+Make the appropriate changes in the files
+Add changes to reflect the changes made
+Commit your changes (git commit -am 'Improve feature')
+Push to the branch (git push origin improve-feature)
+Create a Pull Requestchanges (git commit -am 'Improve feature')
+Push to the branch (git push origin improve-feature)
+Create a Pull Request
+
+Bug / Feature Request
+
+If you find a bug (the website couldn't handle the query and / or gave irrelevant results), kindly open an issue here by including your search query and the expected result.
+
+If you'd like to request a new functionality, feel free to do so by opening an issue here including some sample queries and their corresponding results.
 ## Versioning
 
 We use SemVer for versioning. For the versions available, see the tags on this repository.
 
 ## Authors
 
-Ramiro
-María Jesús
+* Ramiro
+* María Jesús
 
 ## License
 
