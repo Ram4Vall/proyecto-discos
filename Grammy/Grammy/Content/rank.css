@@ -1,0 +1,55 @@
+﻿/*$openSans: 'Open Sans', Helvetica, Arial, sans-serif;*/
+.btVoto{
+  position: relative;
+  left:32%;
+}
+.vote{
+  font-family: openSans;
+  border:2px solid black;
+  border-radius:10px;
+  background: linear-gradient(to bottom,  #999999 0%, #666666 100%);
+  opacity:0.7;
+  width:50%;
+}
+.titulo{
+  text-align:center;
+  font-size:30px;
+  color:white;
+
+}
+.interprete{
+  text-align:center;
+  color:white;
+
+}
+
+.stars{
+  display: inline-block;  
+  position: relative;
+  left:15%;
+  font-size: 30px;
+}
+
+.stars:before{    
+    content: '\2606\2606\2606\2606\2606';
+ }
+
+.rank{
+  position: absolute;
+  overflow: hidden;
+  top:0;
+  left: 0;
+  z-index: 1;
+}
+
+.rank:after{
+    content: '\2605\2605\2605\2605\2605';
+    color: gold;    
+}
+
+.score{
+  color:white;
+  font-size: 50%;
+  font-weight: bold;
+  text-align: center;
+}

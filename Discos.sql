@@ -642,7 +642,7 @@ references tipo (idtipo);
 go
 
 CREATE VIEW MejoresPuntuaciones AS
-select top 5 d.Titulo, sum(p.Puntuacion) as SumaPuntos
+select top 5 d.Titulo, count(p.Id) as SumaPuntos
 from Puntuacion as p 
 	inner join Disco as d
 		on p.iddisco = d.IdDisco

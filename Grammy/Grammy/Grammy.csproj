@@ -310,6 +310,7 @@
     <Content Include="Content\collage.png" />
     <Content Include="Content\css.css" />
     <Content Include="Content\logo.png" />
+    <Content Include="Content\rank.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
