@@ -11,9 +11,10 @@ function loadCharts() {
         contentType: "application/json",
         success: function (Puntuaciones) {
             puntuacionesOB = JSON.parse(Puntuaciones);
-
-            console.log(puntuacionesOB);
-            google.charts.setOnLoadCallback(drawChart);
+            $(document).ready(function () {
+                console.log(puntuacionesOB);
+                google.charts.setOnLoadCallback(drawChart);
+            });
         }
     });
 }
