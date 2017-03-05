@@ -21,10 +21,9 @@ Esta aplicación está destinada a usuarios que deseen votar sus discos favorito
 
 ### Procedimientos	de	instalación
 
-Cargar la base de datos con el script "Discos.sql".
-![Diagrama](http://es.tinypic.com/r/261yddc/9)
+Cargar la base de datos con el script "Discos.sql".  
+![Diagrama](http://i67.tinypic.com/261yddc.jpg)  
 Descargar el proyecto clonando el repositorio principal (`https://github.com/Ram4Vall/proyecto-discos.git`)  
-
 
 ###Development
 
