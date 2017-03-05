@@ -224,16 +224,17 @@ function abrirLogin() {
 }
 
 
-/*function crearTabla() {
+function crearTabla() {
     /*setInterval(function () {
         document.getElementById("datosTab").DataTable();
-    },1000)
-    document.getElementById("datosTab").DataTable();
+    },1000)*/
+    $("#datosTab").DataTable();
 }
 
-setInterval(function () {
+var interval = setInterval(function () {
     var aux = false;
     if ($("#container").children().length > 0) {
         crearTabla();
+        //clearInterval(interval);
     }
-},500);*/
+},500);
