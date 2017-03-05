@@ -313,6 +313,10 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\background\about-us2.jpg" />
+    <Content Include="images\background\contact2.jpg" />
+    <Content Include="images\background\newsletter2.jpg" />
+    <Content Include="images\background\page-top2.jpg" />
     <Content Include="images\background\about-us.jpg" />
     <Content Include="images\background\contact.jpg" />
     <Content Include="images\background\newsletter.jpg" />
