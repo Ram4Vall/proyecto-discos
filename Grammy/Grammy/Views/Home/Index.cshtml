@@ -76,20 +76,26 @@
     <section id="page-top" class="section-style" data-background-image="../../images/background/page-top2.jpg">
        
         <div class="pattern height-resize">
-            <nav class="navbar navbar-light bg-faded" id="barraNav">
-                <a class="navbar-brand">
-                    <img id="imageLogo" src="~/Content/logo.png" width="30" height="40" alt="">
-                    <button style="display:none" type="button" id="loginOut" class="btn btn-default btn-sm">
-                        <span class="glyphicon glyphicon-log-out"></span> Log out
-                    </button>
-                    <button type="button" id="login" class="btn btn-default btn-sm">
-                        <span class="glyphicon glyphicon-user"></span> Login
-                    </button><div id="userLogin"></div>
-                </a>
-            </nav>
-            <div class="container">
+            <div class="navbar navbar-inverse navbar-fixed-top" id="barraNav">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <img id="imageLogo" src="~/Content/logo.png" width="30" height="40" alt="">
+                        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" >
+                            
+                            <button style="display:none" type="button" id="loginOut" class="btn btn-default btn-sm">
+                                <span class="glyphicon glyphicon-log-out"></span> Log out
+                            </button>
+                            <button type="button" id="login" class="btn btn-default btn-sm" onclick="abrirLogin()">
+                                <span class="glyphicon glyphicon-user"></span> Login
+                            </button><div id="userLogin"></div>
+                        </a>
 
-                
+                    </div>
+                </div>
+            </div>
+          
+            <div class="container">
 
 
                 <h1 class="site-title">
@@ -244,7 +250,7 @@
                 </h2><!-- /.Section-title  -->
                 
                     <div class="contact-box-hide">
-                        <img id="imageLogo" src="~/Content/collage.png"  alt="Mapa de imágenes" usemap="#enlaces" height="100%" width="100%">
+                        <img id="image" src="~/Content/collage.png"  alt="Mapa de imágenes" usemap="#enlaces" height="100%" width="100%">
                         <map name="enlaces">
                             <area alt="Absolut." shape="rect" coords="15,15,385,190"
                                   href="http://www.absolut.com/us" />

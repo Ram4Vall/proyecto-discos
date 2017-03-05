@@ -212,8 +212,8 @@ function success(mensaje) {
 //open login/register modal form
 function abrirLogin() {
     var dialog = $("#dialog-form").dialog({
-        width: 500,
-        maxWidth: 500,
+        width: 280,
+        maxWidth: 280,
         height: 'auto',
         modal: true,
         fluid: true,
