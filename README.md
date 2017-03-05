@@ -25,28 +25,6 @@ Cargar la base de datos con el script "Discos.sql".
 ![Diagrama](http://i67.tinypic.com/261yddc.jpg)  
 Descargar el proyecto clonando el repositorio principal (`https://github.com/Ram4Vall/proyecto-discos.git`)  
 
-###Development
-
-Want to contribute? Great!
-
-To fix a bug or enhance an existing module, follow these steps:
-
-Fork the repo  
-Create a new branch (`git checkout -b improve-feature`)  
-Make the appropriate changes in the files  
-Add changes to reflect the changes made  
-Commit your changes (`git commit -am 'Improve feature'`)  
-Push to the branch (`git push origin improve-feature`)  
-Create a Pull Requestchanges (`git commit -am 'Improve feature'`)  
-Push to the branch (`git push origin improve-feature`)  
-Create a Pull Request  
-
-### Bug / Feature Request
-
-If you find a bug (the website couldn't handle the query and / or gave irrelevant results), kindly open an issue here by including your search query and the expected result.
-
-If you'd like to request a new functionality, feel free to do so by opening an issue here including some sample queries and their corresponding results.
-
 ## Authors
 
 * Ramiro
