@@ -1,6 +1,6 @@
-# proyecto-discos
+# proyecto-discos - Grammy
 
-Proyecto final de puntuación de discos - DEW
+Final proyect - DEW
 
 ### Prerequisites
 
