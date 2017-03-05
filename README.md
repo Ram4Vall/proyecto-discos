@@ -1,10 +1,6 @@
 # proyecto-discos
+
 Proyecto final de puntuación de discos - DEW
-
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
@@ -24,31 +20,13 @@ And repeat
 until finished
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
+## Built with
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-Give an example
-
-### And coding style tests
-
-Explain what these tests test and why
-
-Give an example
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-Dropwizard - The web framework used
-Maven - Dependency Management
-ROME - Used to generate RSS Feeds
+* React - React makes it painless to create interactive UIs.
+* Api REST - Set of functions which developers can perform requests and receive responses via HTTP protocol such as GET and POST.
+* jQuery - Ajax - jQuery simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.
+* Google Chart API - Free , Rich Gallery , Customizable and Cross-browser compatible.
+* Bootstrap - Extensive list of components and Bundled Javascript plugins.
 
 ## Usage
 
@@ -59,16 +37,16 @@ Want to contribute? Great!
 To fix a bug or enhance an existing module, follow these steps:
 
 Fork the repo
-Create a new branch (git checkout -b improve-feature)
+Create a new branch (`git checkout -b improve-feature`)
 Make the appropriate changes in the files
 Add changes to reflect the changes made
-Commit your changes (git commit -am 'Improve feature')
-Push to the branch (git push origin improve-feature)
-Create a Pull Requestchanges (git commit -am 'Improve feature')
-Push to the branch (git push origin improve-feature)
+Commit your changes (`git commit -am 'Improve feature'`)
+Push to the branch (`git push origin improve-feature`)
+Create a Pull Requestchanges (`git commit -am 'Improve feature'`)
+Push to the branch (`git push origin improve-feature`)
 Create a Pull Request
 
-Bug / Feature Request
+### Bug / Feature Request
 
 If you find a bug (the website couldn't handle the query and / or gave irrelevant results), kindly open an issue here by including your search query and the expected result.
 
@@ -81,13 +59,3 @@ We use SemVer for versioning. For the versions available, see the tags on this r
 
 * Ramiro
 * María Jesús
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Hat tip to anyone who's code was used
-Inspiration
-etc
