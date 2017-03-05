@@ -4,9 +4,7 @@ Final proyect - DEW
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-Give examples
+Create database with script "Discos.sql"
 
 ### Installing
 
@@ -51,9 +49,6 @@ Create a Pull Request
 If you find a bug (the website couldn't handle the query and / or gave irrelevant results), kindly open an issue here by including your search query and the expected result.
 
 If you'd like to request a new functionality, feel free to do so by opening an issue here including some sample queries and their corresponding results.
-## Versioning
-
-We use SemVer for versioning. For the versions available, see the tags on this repository.
 
 ## Authors
 
