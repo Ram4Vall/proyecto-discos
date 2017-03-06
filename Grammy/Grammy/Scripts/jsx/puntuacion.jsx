@@ -35,14 +35,19 @@ var Table = React.createClass({
     componentDidMount: function () {
         //Usa el pluggin DataTable para crear una tabla más bonita
         $("#datosTab").DataTable();
-        function miFuncion() { $(".btVoto").click(function (e) {
+        /*function miFuncion() { $(".btVoto").click(function (e) {
             var butMe = e.target;
             puntuar(butMe.id, butMe.name, e);
-        });}
+        });}*/
 
         //miFuncion();
-        $("#datosTab").on( 'draw.dt', function () {
-            miFuncion();
+        
+        $("#datosTab").on('draw.dt', function () {
+            $(".btVoto").unbind('click');
+            $(".btVoto").click(function (e) {
+                var butMe = e.target;
+                puntuar(butMe.id, butMe.name, e);
+            });
         } );
     },
     render () {

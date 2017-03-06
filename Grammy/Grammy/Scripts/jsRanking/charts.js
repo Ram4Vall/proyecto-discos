@@ -1,11 +1,13 @@
-﻿var chart = new Charts();
+﻿var chart = new Charts();//creamos el objeto
 
 google.charts.load("current", { packages: ["corechart"] });
 
+//Objeto chart que recibe datos y crea graficos
 function Charts (){
     this.puntuacionesOB = null;
 }
 
+//Carga  los datos del API REST puntuaciones
 Charts.prototype.loadCharts = function () {
     var that = this;
     document.getElementById("ranking").innerHTML = "";
@@ -22,6 +24,7 @@ Charts.prototype.loadCharts = function () {
     });
 }
 
+//Dibuja el gráfico
 Charts.prototype.drawChart = function (puntuacionesOB) {
 
     var that = this;
@@ -51,8 +54,6 @@ Charts.prototype.drawChart = function (puntuacionesOB) {
         
         titleTextStyle: { color: 'white', fontSize: 30, fontfamily: 'Roboto' },
         textStyle:{color:"white", fontSize:20},
-        width: 800,
-        height: 400,
         is3D: true,
         fontSize: 15,
         backgroundColor: "none",

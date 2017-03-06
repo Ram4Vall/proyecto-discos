@@ -23,7 +23,6 @@
             success: function () {
                 //Muestra una etiqueta si todo fue bien
                 success("Se ha puntuado el disco " + nomDis);
-                //chart.loadCharts();
                 chart.loadCharts();
             }//.bind(this)
         });

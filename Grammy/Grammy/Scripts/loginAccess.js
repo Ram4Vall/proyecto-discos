@@ -11,6 +11,7 @@ $(document).ready(function () {
     //Se ejecuta cuando la ventana se redimensiona
     $(window).resize(function () {
         fluidDialog();
+        chart.loadCharts();
     });
     //La ventana modal se centra.
     function fluidDialog() {
