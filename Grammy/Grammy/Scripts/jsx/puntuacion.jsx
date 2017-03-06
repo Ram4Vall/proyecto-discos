@@ -1,33 +1,42 @@
-﻿var Puntuaciones = React.createClass({
+﻿//Componente que renderiza las puntuaciones de discos
+var Puntuaciones = React.createClass({
+    //Se inicia el estado con la lista vacia
     getInitialState: function () {
         return {
-            listaDiscos: '',
-            searchTerm: ''
+            listaDiscos: ''
         }
     },
 
+    //Petición al API REST de los discos [GET]
     componentDidMount: function() {
         $.ajax({
             url: this.props.url,
             dataType: 'json',
             success: function (listaDiscos) {
                 this.setState({ listaDiscos });
+                loadCharts();
             }.bind(this)
         });
+        
     },
 
+    //Función que me permite puntuar un disco mediante una petición ajax al API REST [POST]
     puntuar: function (idDisco, nomDis, event) {
+        //Comprobamos que se ha logueado un usuario
         if (!sessionStorage.ClienteLogeado) {
             abrirLogin();
         } else {
             var idCliente = JSON.parse(sessionStorage.ClienteLogeado);
+            //Se crea el objeto puntuación para ser insertado en  la BD
             var obPuntuacion = {
                 Idcliente: idCliente.id,
                 iddisco: idDisco,
                 Puntuacion1: null,
                 Fecha: null
             }
+            //Convertimos el objeto a json
             var dataInsert = JSON.stringify(obPuntuacion);
+            //Enviamos la puntuación
             $.ajax({
                 data: dataInsert,
                 url: "../api/Puntuaciones/",
@@ -35,20 +44,20 @@
                 contentType: "application/json;chartset=utf-8",
                 type: "POST",
                 success: function () {
-                    //alert(a);
+                    //Muestra una etiqueta si todo fue bien
                     success("Se ha puntuado el disco " + nomDis);
+                    //chart.loadCharts();
+                    loadCharts();
                 }.bind(this)
             });
+            //Desabilita el botón para no volver a puntuar
             event.target.disabled = true;
-            event.target.value = "Votado";  
+            event.target.value = "Votado";
         }
 
     },
-    /*onSearchSubmit: function(event) {
-        const searchTerm = this.state.searchTerm;
-        this.fetchSearchTopStories(searchTerm);
-        event.preventDefault();
-    },*/
+
+    //Renderiza una tabla con los datos
     render () {
         const list = this.state.listaDiscos;
         if(!list){return null;}
@@ -58,42 +67,21 @@
 }
 });
 
-/*var Table = React.createClass({
-    render () {
-        const lista = this.props.lista;
-        const puntuar = this.props.puntuar;
-        //const hola = this.props.hola;
-        //var aux = {backgroundColor: "red"};
-        return (
-            <div>
-                { lista.map((item) =>
-                    <div key={item.IdDisco}>
-                        <div className="vote">
-                            <div className="titulo">{item.Titulo}</div>
-                            <div className="interprete">{item.Interprete.Interprete1}</div>
-                            <div>
-                              <Button onclick={() => { puntuar(item.IdDisco, item.Titulo, event)  }} className="btVoto">Vote</Button>
-                            </div>
-                        </div>
-                    </div>
-                )
-                }
-            </div>
-        );
-}
-});*/
-
+//Componente que renderiza la tabla usando la lista
 var Table = React.createClass({
+    componentDidMount: function () {
+        //Usa el pluggin DataTable para crear una tabla más bonita
+        $("#datosTab").DataTable();
 
-    /*componentDidMount: function () {
-        //console.log(document.getElementById("datosTab"));
-        //crearTabla();
-        this.hola();
-    },*/
+        /*$("#datosTab").on( 'draw.dt', function () {
+            $(".btVoto").click(function () {
+                alert('Table redrawn');
+            });
+        } );*/
+    },
     render () {
         const lista = this.props.lista;
         const puntuar = this.props.puntuar;
-        //var aux = {backgroundColor: "red"};
         return (
             <table id="datosTab" className="table table-striped table-bordered" cellspacing="0">
                 <thead><tr><th>Titulo</th><th>Interprete</th><th>Votar</th></tr></thead>
@@ -105,7 +93,7 @@ var Table = React.createClass({
                             <td className="interprete">{item.Interprete.Interprete1}</td>
                             <td><Button onclick={() => { puntuar(item.IdDisco, item.Titulo, event)  }} className="btVoto">Vote</Button></td>
                         </tr>
-                 )
+                    )
                     }
                 </tbody>
             </table>
@@ -113,7 +101,8 @@ var Table = React.createClass({
 }
 });
 
-var Button =  React.createClass({
+//Renderiza el botón que puntua el disco
+var Button = React.createClass({
     render() {
         const onClick = this.props.onclick;
         const children = this.props.children;
@@ -122,19 +111,4 @@ var Button =  React.createClass({
 }
 });
 
-/*var Search = React.createClass({
-    return () {
-        const onSubmit = this.props.onSubmit;
-        const children = this.props.children;
-        const value = this.props.value;
-        <form onSubmit={onSubmit}>
-        <input type="text" value={value} />
-        <button type="submit">{children}</button>
-      </form>
-    }
-})*/
-
-
-
-
-React.render(<Puntuaciones url="../api/Discos" />, document.getElementById('container'));
+React.render(<Puntuaciones url="../api/Discos" />, document.getElementById('container'));//Se ejecuta el render

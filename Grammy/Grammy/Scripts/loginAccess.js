@@ -3,16 +3,6 @@ var contAux = 0;
 $(document).ready(function () {
     //Se crea la ventana modal al darle al botón del login
     $("#login").click(function () {
-        /*var dialog = $("#dialog-form").dialog({
-            width: 500,
-            maxWidth: 500,
-            height: 'auto',
-            modal: true,
-            fluid: true, 
-            resizable: false
-        });
-        dialog.dialog("open");
-        thisForm = new Formulario();*/
         abrirLogin();
 
     });
@@ -20,6 +10,7 @@ $(document).ready(function () {
     //Se ejecuta cuando la ventana se redimensiona
     $(window).resize(function () {
         fluidDialog();
+        drawChart()
     });
     //La ventana modal se centra.
     function fluidDialog() {
@@ -45,6 +36,7 @@ $(document).ready(function () {
 
     }
 });
+
 function Formulario() {
     this.dialog;
     this.botonLogin = $("#login-submit");
@@ -64,6 +56,8 @@ function Formulario() {
     this.botonRegistro.bind('click', this.añadirUsuario);
     this.botonLogout.bind('click', this.logout);
 }
+
+//Busca y loguea el usuario
 Formulario.prototype.buscarUsuario = function () {
 
     var that = this;
@@ -106,6 +100,7 @@ Formulario.prototype.buscarUsuario = function () {
         }
     });
 }
+
 //Funcion que registra un usuario nuevo.
 Formulario.prototype.añadirUsuario = function () {
     var regExpNombre = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
@@ -138,6 +133,8 @@ Formulario.prototype.añadirUsuario = function () {
         error("Valores invalidos");
     }
 }
+
+//Eliminar session de usuario
 Formulario.prototype.logout = function () {
     localStorage.removeItem('ClienteLogeado');
     sessionStorage.removeItem('ClienteLogeado');
@@ -167,7 +164,7 @@ function error(eMensaje) {
         "hideMethod": "fadeOut"
     }
 }
-//Toastr Success
+//Toastr Success *Refactorizado de  success() y successRegistro()*
 function success(mensaje) {
     Command: toastr["success"](mensaje, "")
 
@@ -188,28 +185,8 @@ function success(mensaje) {
         "hideMethod": "fadeOut"
     }
 }
-/*function successRegistro() {
-    Command: toastr["success"]("¡Usuario registrado!", "")
 
-    toastr.options = {
-        "closeButton": false,
-        "debug": false,
-        "newestOnTop": false,
-        "progressBar": false,
-        "positionClass": "toast-top-center",
-        "preventDuplicates": false,
-        "showDuration": "300",
-        "hideDuration": "1000",
-        "timeOut": "5000",
-        "extendedTimeOut": "1000",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "fadeIn",
-        "hideMethod": "fadeOut"
-    }
-}*/
-
-//open login/register modal form
+//open login/register modal form *Refactorizado Cod Duplicado*
 function abrirLogin() {
     var dialog = $("#dialog-form").dialog({
         width: 280,
@@ -222,19 +199,3 @@ function abrirLogin() {
     dialog.dialog("open");
     thisForm = new Formulario();
 }
-
-
-function crearTabla() {
-    /*setInterval(function () {
-        document.getElementById("datosTab").DataTable();
-    },1000)*/
-    $("#datosTab").DataTable();
-}
-
-var interval = setInterval(function () {
-    var aux = false;
-    if ($("#container").children().length > 0) {
-        crearTabla();
-        //clearInterval(interval);
-    }
-},500);
