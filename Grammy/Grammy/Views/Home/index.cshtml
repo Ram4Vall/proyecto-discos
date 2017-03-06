@@ -1,0 +1,401 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>	Grammy´s</title>
+    <meta name="description" content="Grammy's'">
+    <meta name="author" content="Jewel Theme">
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <!-- Jquery-UI CSS  -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- Toastr  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    <!-- Bootstrap  -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- icon fonts font Awesome -->
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link href="~/Content/css.css" rel="stylesheet">
+    <!-- Custom Styles Rank-->
+    <link href="~/Content/rank.css" rel="stylesheet">
+    <!-- Custom Styles Ranking-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="loader">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="lading"></div>
+        </div>
+    </div><!-- /#preloader -->
+    <!-- Preloader End-->
+    <!-- Main Menu -->
+    <div id="main-menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+        <div class="navbar-header">
+            <!-- responsive navigation -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" id="navCollap" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <i class="fa fa-bars"></i>
+            </button> <!-- /.navbar-toggle -->
+        </div> <!-- /.navbar-header -->
+        <nav class="collapse navbar-collapse">
+            <!-- Main navigation -->
+            <ul id="headernavigation" class="nav navbar-nav">
+                <li class="active"><a href="#page-top">Timeout</a></li>
+                <li><a href="#about">Rate</a></li>
+                <li><a href="#subscribe">Ranking</a></li>
+                <li><a href="#contact">Sponsors</a></li>
+            </ul> <!-- /.nav .navbar-nav -->
+        </nav> <!-- /.navbar-collapse  -->
+    </div><!-- /#main-menu -->
+    <!-- Main Menu End -->
+    <!-- Page Top Section -->
+    <section id="page-top" class="section-style" data-background-image="../../images/background/page-top2.jpg">
+       
+        <div class="pattern height-resize">
+            <div class="navbar navbar-inverse navbar-fixed-top" id="barraNav">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <img id="imageLogo" src="~/Content/logo.png" width="30" height="40" alt="">
+                        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" >
+                            
+                            <button style="display:none" type="button" id="loginOut" class="btn btn-default btn-sm">
+                                <span class="glyphicon glyphicon-log-out"></span> Log out
+                            </button>
+                            <button type="button" id="login" class="btn btn-default btn-sm" onclick="abrirLogin()">
+                                <span class="glyphicon glyphicon-user"></span> Login
+                            </button><div id="userLogin"></div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+          
+            <div class="container">
+
+
+                <h1 class="site-title">
+                    Grammy's
+                </h1><!-- /.site-title -->
+                
+                <h2 class="section-title">
+                    Timeout
+                </h2><!-- /.Section-title  -->
+                <div id="time_countdown" class="time-count-container">
+                    <div class="col-sm-3">
+                        <div class="time-box">
+                            <div class="time-box-inner dash days_dash animated" data-animation="rollIn" data-animation-delay="300">
+                                <span class="time-number">
+                                    <span class="digit">0</span>
+                                    <span class="digit">0</span>
+                                    <span class="digit">0</span>
+                                </span>
+                                <span class="time-name">Days</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="time-box">
+                            <div class="time-box-inner dash hours_dash animated" data-animation="rollIn" data-animation-delay="600">
+                                <span class="time-number">
+                                    <span class="digit">0</span>
+                                    <span class="digit">0</span>
+                                </span>
+                                <span class="time-name">Hours</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="time-box">
+                            <div class="time-box-inner dash minutes_dash animated" data-animation="rollIn" data-animation-delay="900">
+                                <span class="time-number">
+                                    <span class="digit">0</span>
+                                    <span class="digit">0</span>
+                                </span>
+                                <span class="time-name">Minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="time-box">
+                            <div class="time-box-inner dash seconds_dash animated" data-animation="rollIn" data-animation-delay="1200">
+                                <span class="time-number">
+                                    <span class="digit">0</span>
+                                    <span class="digit">0</span>
+                                </span>
+                                <span class="time-name">Seconds</span>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.time-count-container -->
+                <p class="time-until">
+                    <span>Time until voting ends</span>
+                </p><!-- /.time-until -->
+
+                <div class="next-section">
+                    <a class="go-to-about"><span></span></a>
+                </div><!-- /.next-section -->
+            </div><!-- /.container -->
+        </div><!-- /.pattern -->
+    </section><!-- /#page-top -->
+    <!-- Page Top Section  End -->
+    <!-- About Us Section -->
+    <section id="about" class="section-style" data-background-image="../../images/background/about-us2.jpg">
+        <div class="pattern height-resize">
+            <div class="container">
+                <h3 class="section-name">
+                    <span>
+                        Rate
+                    </span>
+                </h3><!-- /.section-name -->
+                <h2 class="section-title">
+                    We need your vote
+                </h2><!-- /.Section-title  -->
+                
+                <div class="team-container">
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+
+                        <div class="col-sm-6">
+                            <div id="container"></div>
+                        </div>
+
+                        <div class="col-sm-3"></div>
+                    </div><!-- /.row -->
+                </div><!-- /.team-container -->
+                <div class="next-section">
+                    <a class="go-to-subscribe"><span></span></a>
+                </div><!-- /.next-section -->
+            </div><!-- /.container -->
+        </div><!-- /.pattern -->
+
+    </section>
+    <section id="subscribe" class="section-style" data-background-image="../../images/background/newsletter2.jpg">
+        <div class="pattern height-resize">
+            <div class="container">
+                <h3 class="section-name">
+                    <span>
+                       Ranking
+                    </span>
+                </h3><!-- /.section-name -->
+                <h2 class="section-title">
+                    Look the most voted albums
+                </h2><!-- /.Section-title  -->
+                
+                <div id="ranking"></div>
+        
+                @*<div class="social-btn-container">
+                    <span class="social-btn-box">
+                        <a href="#" class="facebook-btn">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </span><!-- /.social-btn-box -->
+                    <span class="social-btn-box">
+                        <a href="#" class="twitter-btn"><i class="fa fa-twitter"></i></a>
+                    </span><!-- /.social-btn-box -->
+                    <span class="social-btn-box">
+                        <a href="#" class="linkedin-btn"><i class="fa fa-linkedin"></i></a>
+                    </span><!-- /.social-btn-box -->
+                    <span class="social-btn-box">
+                        <a href="#" class="google-plus-btn"><i class="fa fa-google-plus"></i></a>
+                    </span><!-- /.social-btn-box -->
+
+                    <span class="social-btn-box">
+                        <a href="#" class="youtube-btn"><i class="fa fa-youtube"></i></a>
+                    </span><!-- /.social-btn-box -->
+
+                </div><!-- /.social-btn-container -->*@
+                <div class="next-section">
+                    <a class="go-to-contact"><span></span></a>
+                </div><!-- /.next-section -->
+            </div><!-- /.container -->
+        </div><!-- /.pattern -->
+    </section><!-- /#subscribe -->
+    <!-- Subscribe Section End -->
+    <!-- Contact Section -->
+    <section id="contact" class="section-style" data-background-image="../../images/background/contact2.jpg">
+        <div class="pattern height-resize">
+            <div class="container">
+                <h3 class="section-name">
+                    <span>
+                        Sponsor
+                    </span>
+                </h3><!-- /.section-name -->
+                <h2 class="section-title">
+                    Get in Touch
+                </h2><!-- /.Section-title  -->
+                
+                    <div class="contact-box-hide">
+                        <img id="image" src="~/Content/collage.png"  alt="Mapa de imágenes" usemap="#enlaces" height="100%" width="100%">
+                        <map name="enlaces">
+                            <area alt="Absolut." shape="rect" coords="15,15,385,190"
+                                  href="http://www.absolut.com/us" />
+                            <area alt="People" shape="rect" coords="405,15,995,293"
+                                  href="http://www.people.com" />
+                            <area alt="Soundcloud" shape="rect" coords="19,205,380,380"
+                                  href="http://www.soundcloud.com" />
+                            <area alt="Spotify" shape="rect" coords="410,310,920,430"
+                                  href="http://www.spotify.com" />
+                            <area alt="Shazam" shape="rect" coords="15,400,400,600"
+                                  href="http://www.shazam.com" />
+                            <area alt="Hilton" shape="rect" coords="430,450,860,660"
+                                  href="http://www.hilton.com" />
+                        </map> 
+                    </div><!-- /.contact-box-hide -->
+                    
+                
+                <div class="next-section">
+                    <a class="go-to-page-top"><span></span></a>
+                </div><!-- /.next-section -->
+            </div><!-- /.container -->
+        </div><!-- /.pattern -->
+    </section><!-- /#contact -->
+    <!-- Contact Section End -->
+    <!-- Footer Section -->
+
+    <div id="dialog-form" class="container" style="display:none">
+        <div class="row" id="rowtuputamadre">
+            <div class="col-md-6 col-md-offset-3">
+                <div id="bloque" class="panel panel-login">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <a href="#" class="active" id="login-form-link">Login</a>
+                            </div>
+                            <div class="col-xs-6">
+                                <a href="#" id="register-form-link">Register</a>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form id="login-form" action="return:false;" method="post" role="form">
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                        <label for="remember"> Remember Me</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input type="submit"  name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <form id="register-form" action="return:false;" method="post" role="form" style="display: none;">
+                                    <div class="form-group">
+                                        <input type="text" name="nombre" id="nombre1" tabindex="1" class="form-control" placeholder="Name" value="" pattern="^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$" title="Invalid Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="username" id="username1" tabindex="1" class="form-control" placeholder="Username" value="" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title="Invalid Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="fNacimiento" id="fNacimiento1" tabindex="1" class="form-control" placeholder="Fecha de nacimiento" value="" pattern="^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]|(?:Jan|Mar|May|Jul|Aug|Oct|Dec)))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2]|(?:Jan|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec))\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)(?:0?2|(?:Feb))\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9]|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep))|(?:1[0-2]|(?:Oct|Nov|Dec)))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$"  title="Invalid Date">
+                                    </div>
+                                    <div class="form-group">
+                                        @{
+                                            string str = @"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$";
+                                        }
+                                        <input type="email" name="email" id="email1" tabindex="1" class="form-control" placeholder="Email Address" value="" pattern=@str title="Invalid E-mail">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password1" tabindex="2" class="form-control" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="confirm-password" id="confirm-password1" tabindex="2" class="form-control" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+
+                                                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer-section">
+        <p class="copyright">
+            &copy; <a href="http://jeweltheme.com/html/kite/">Kite</a> 2014-2015, All Rights Reserved. Designed by & Developed by <a href="http://jeweltheme.com">Jewel Theme</a>
+        </p>
+    </footer>
+    <!-- Footer Section End -->
+    <!-- jQuery Library -->
+    <script type="text/javascript" src="/assets/js/jquery-2.1.0.min.js"></script>
+    <!-- Modernizr js -->
+    <script type="text/javascript" src="/assets/js/modernizr-2.8.0.min.js"></script>
+    <!-- Plugins -->
+    <script type="text/javascript" src="/assets/js/plugins.js"></script>
+    <!-- Custom JavaScript Functions -->
+    <script type="text/javascript" src="/assets/js/functions.js"></script>
+    <!-- Custom JavaScript Functions -->
+    <script type="text/javascript" src="/assets/js/jquery.ajaxchimp.min.js"></script>
+    <!-- BootStrap Library -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery-UI Library -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Toastr Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- Validate JavaScript Library -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.validate.unobtrusive.min.js"></script>
+    <!-- Custom JavaScript Functions -->
+    <script type="text/javascript" src="~/Scripts/js.js"></script>
+    <!-- Plugins Table-->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <!-- Custom JavaScript Functions -->
+    <script type="text/javascript" src="~/Scripts/loginAccess.js"></script>
+    <!--Custom JavaScript Functions Charts-->
+    <script type="text/javascript" src="~/Scripts/jsRanking/puntuaciones.js"></script>
+    <!--React's Library-->
+    <script src="~/Scripts/react/react.min.js"></script>
+    <!--React's App-->
+    <script src="~/Scripts/jsx/puntuacion.jsx"></script>
+    <!--Charts' Library-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!--Custom JavaScript Functions Charts-->
+    <script type="text/javascript" src="~/Scripts/jsRanking/charts.js"></script>
+
+</body>
+</html>
+
