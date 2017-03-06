@@ -24,7 +24,7 @@
                 //Muestra una etiqueta si todo fue bien
                 success("Se ha puntuado el disco " + nomDis);
                 //chart.loadCharts();
-                loadCharts();
+                chart.loadCharts();
             }//.bind(this)
         });
         //Desabilita el botón para no volver a puntuar

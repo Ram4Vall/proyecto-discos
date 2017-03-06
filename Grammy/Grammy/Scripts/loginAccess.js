@@ -3,16 +3,7 @@ var contAux = 0;
 $(document).ready(function () {
     //Se crea la ventana modal al darle al botón del login
     $("#login").click(function () {
-        /*var dialog = $("#dialog-form").dialog({
-            width: 500,
-            maxWidth: 500,
-            height: 'auto',
-            modal: true,
-            fluid: true, 
-            resizable: false
-        });
-        dialog.dialog("open");
-        thisForm = new Formulario();*/
+
         abrirLogin();
 
     });
