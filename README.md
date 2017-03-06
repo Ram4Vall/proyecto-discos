@@ -35,3 +35,4 @@ Descargar el proyecto clonando el repositorio principal (`https://github.com/Ram
 
 * Trello - https://trello.com/b/bbbXgC3l/los-grammy
 * Prezi - http://prezi.com/x_ezjkvplwhv/?utm_campaign=share&utm_medium=copy&rc=ex0share
+* Slack - https://proyecto-discos.slack.com/messages/general/
