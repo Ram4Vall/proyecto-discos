@@ -190,4 +190,82 @@ function abrirLogin() {
     });
     dialog.dialog("open");
     thisForm = new Formulario();
+
+    teclado.generarTeclado();
 }
+
+var teclado = new Teclado(
+document.getElementById("teclado"),
+document.getElementById("password")
+);
+
+function Teclado(nodoContenedor, nodoCampoPass) {
+    this.nodoTeclado = nodoContenedor;
+    this.usados = [];
+    this.passWord = "";
+    this.nodoCampoPass = nodoCampoPass;
+}
+
+Teclado.prototype.generarTeclado = function () {
+    this.numerosAleatorios();
+    this.crearBotones();
+    this.usados = [];
+    this.nodoCampoPass.setAttribute("onclick", "teclado.limpiarClave()");
+}
+
+Teclado.prototype.crearBotones = function () {
+    this.nodoTeclado.innerHTML = "";
+    for (var i = 0; i < this.usados.length; i++) {
+        var boton = document.createElement("input");
+        boton.setAttribute("type", "button");
+        boton.setAttribute("value", this.usados[i]);
+        boton.setAttribute("onclick", "teclado.escribirPassword(this)");
+
+        this.nodoTeclado.appendChild(boton);
+    }
+}
+
+Teclado.prototype.reiniciar = function () {
+    this.limpiarClave();
+    this.nodoTeclado.innerHTML = " ";
+}
+
+Teclado.prototype.escribirPassword = function (nodo) {
+    this.passWord += nodo.value;
+    this.nodoCampoPass.setAttribute("value", this.passWord);
+}
+
+Teclado.prototype.limpiarClave = function () {
+    this.nodoCampoPass.setAttribute("value", "");
+    this.passWord = "";
+}
+
+Teclado.prototype.numerosAleatorios = function () {
+    var min = 0;
+    var max = 10;
+
+    do {
+        var numero;
+        var repetido = false;
+
+        do {
+            numero = Math.floor(Math.random() * (max - min)) + min;
+            repetido = this.verificaRepetido(numero);
+        } while (repetido != false);
+
+        this.usados.push(numero);
+
+    } while (this.usados.length != max);
+
+}
+
+Teclado.prototype.verificaRepetido = function (num) {
+    var repe = false;
+    for (var i = 0; i < this.usados.length; i++) {
+        if (num == this.usados[i]) {
+            repe = true;
+        }
+    }
+    return repe;
+}
+
