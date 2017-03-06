@@ -7,7 +7,7 @@ Página web destinada a gestionar votaciones para una serie de discos.
 * Incluye un sistema de login y registro.  
 * Un buscador de discos.  
 * Gráfica con los discos más votados.  
-* Publicidad.
+* Publicidad.   
 Esta aplicación está destinada a usuarios que deseen votar sus discos favoritos.
 
 ### Herramientas	utilizadas
