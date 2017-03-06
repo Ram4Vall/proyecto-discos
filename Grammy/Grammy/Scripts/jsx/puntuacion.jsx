@@ -41,7 +41,10 @@ var Table = React.createClass({
         });}*/
 
         //miFuncion();
-        
+        $(".btVoto").click(function (e) {
+            var butMe = e.target;
+            puntuar(butMe.id, butMe.name, e);
+        });
         $("#datosTab").on('draw.dt', function () {
             $(".btVoto").unbind('click');
             $(".btVoto").click(function (e) {
